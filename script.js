@@ -21,7 +21,7 @@ addMovie.addEventListener('click', () => {
 
     renderMovies()
 })
-
+const d = {ddd: 1000}
 
 function renderMovies() {
     movieList.innerHTML = '';

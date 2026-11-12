@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(239, 255, 255);
+    
+}
+main{
+    flex-grow: 1;
+}
+.structure{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(81, 99, 99, 0.1);
+    width: 60%;
+    height: auto;
+    margin-top: 15%;
+    padding: 30px;
+}
+.top{
+
+}
+.name{
+    display: flex;
+    flex-direction: column;
+}
+.inputes{
+
+}
+.papa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
