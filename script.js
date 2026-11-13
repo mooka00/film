@@ -18,38 +18,44 @@ addMovie.addEventListener('click', () => {
     movieTitles.push(movieName.value)
     moviePosters.push(moviePoster.value)
 
-
     renderMovies()
 })
-const d = {ddd: 1000}
 
 function renderMovies() {
     movieList.innerHTML = '';
 
     movieTitles.forEach((movieTitle, index) => {
         const item = document.createElement('li');
+        item.className = 'movie-item';
 
         const poster = document.createElement('img');
+        poster.src = moviePosters[index];
+        poster.alt = '';
+        poster.width = 64;
+        poster.className = 'movie-poster';
+
+        const title = document.createElement('span');
+        title.textContent = movieTitle;
+        title.className = 'movie-title';
 
         const delet = document.createElement('button')
-        delet.textContent = 'удалить'
+        delet.textContent = 'Удалить'
+        delet.className = 'delete-btn'
+
         delet.addEventListener('click', () => {
             movieTitles.splice(index, 1)
             moviePosters.splice(index, 1)
             renderMovies()
         })
-        poster.src = moviePosters[index];
-        poster.alt = '';
-        poster.width = 64;
 
-        const title = document.createElement('span');
-        title.textContent = movieTitle;
 
-        item.append(poster, title, delet);
+        const infoWrap = document.createElement('div');
+        infoWrap.className = 'movie-info';
+        infoWrap.append(title);
+
+        item.append(poster, infoWrap, delet);
         movieList.append(item);
-
     });
 }
-
 
 renderMovies();
